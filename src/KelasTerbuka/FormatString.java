@@ -6,13 +6,14 @@ public class FormatString {
         String nama = "Kelvin";
         int umur = 20;
 
-        System.out.println("Nama saya " + nama + ", umur saya adalah " + umur);
+        System.out.println("Nama saya adalah " + nama + ", umur " + umur + " tahun.");
 
         // pake printf
-        System.out.printf("Nama saya %s, umur saya adalah %d",nama,umur);
+        System.out.printf("\nNama saya adalah %s, umur %d tahun.",nama,umur);
 
-        System.out.println();
         int number = 1000000000;
-        System.out.printf("%-,10d\n",number);
+        System.out.println("\n");
+
+        System.out.printf("%-,10d",number);
     }
 }

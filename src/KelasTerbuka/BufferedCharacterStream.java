@@ -8,9 +8,9 @@ public class BufferedCharacterStream {
 
         // Membaca file dahulu
         FileReader fileInput = new FileReader("input.txt");
-
         BufferedReader bufferedReader = new BufferedReader(fileInput);
         bufferedReader.mark(200);
+
 
         // Membaca string-nya
         String data = bufferedReader.readLine();
@@ -34,20 +34,19 @@ public class BufferedCharacterStream {
         bufferedReader.reset();
 
         String baris1 = bufferedReader.readLine();
-        bufferedWriter.write(baris1, 0, baris1.length());
+        bufferedWriter.write(baris1,0,25);
         bufferedWriter.flush();
 
         // menambah newline / enter
         bufferedWriter.newLine();
 
         String baris2 = bufferedReader.readLine();
-        bufferedWriter.write(baris2,0,baris2.length());
+        bufferedWriter.write(baris2,0,23);
         bufferedWriter.flush();
 
-        bufferedWriter.close();
         bufferedReader.close();
-        fileOutput.close();
+        bufferedWriter.close();
         fileInput.close();
-
+        fileOutput.close();
     }
 }

@@ -3,19 +3,18 @@ package ALearn_PZN;
 public class Scope {
     public static void main(String[] args) {
 
-        sayHello("");
+        // fungsi
+        hello("Kelvin");
+        System.out.println();
+        hello("");
     }
 
-    public static void sayHello(String name) {
+    static void hello(String name) {
+        System.out.println("Hello " + name);
 
-        String hello = "Hello " + name;
-
-        if (!name.isBlank())
-        {
+        if (!name.isBlank()) {
             String hi = "Hi " + name;
             System.out.println(hi);
         }
-
-        System.out.println(hello);
     }
 }

@@ -2,47 +2,59 @@ package ALearn_progate;
 
 import java.util.Scanner;
 
-class Main4 {
+public class Main4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Berapa orang mau cek BMI ? : ");
-        int org = scanner.nextInt();
+        System.out.println("\nProgram Sederhana Cek Kesehatan dengan BMI");
 
-        int maxAge = 0;
+        System.out.print("Ada berapa banyak orang: ");
+        int nOrg = scanner.nextInt();
+
         int sumAge = 0;
+        int minAge = Integer.MAX_VALUE;
+        int maxAge = 0;
 
-        for (int i = 0; i < org; i++) {
+        for (int i = 0; i < nOrg; i++) {
 
-            System.out.println("Orang ke-" + (i+1));
+            System.out.println("\nInput data orang ke-" + (i+1));
 
-            System.out.print("Masukkan Nama depan mu : ");
+            System.out.print("Input Nama Depan       : ");
             String firstName = scanner.next();
 
-            System.out.print("Masukkan Nama belakang mu : ");
+            System.out.print("Input Nama Belakang    : ");
             String lastName = scanner.next();
 
-            System.out.print("Masukkan Umur mu : ");
+            System.out.print("Input Umur             : ");
             int age = scanner.nextInt();
 
-            if (maxAge < age)
-            {
+            // menjumlah usia
+            sumAge += age;
+
+            // mencari usia termuda
+            if (minAge > age) {
+                minAge = age;
+            }
+
+            // mencari usia tertua
+            if (maxAge < age) {
                 maxAge = age;
             }
 
-            sumAge += age;
-
-            System.out.print("Masukkan Berat Badan mu : ");
+            System.out.print("Input Berat Badan (kg) : ");
             double weight = scanner.nextDouble();
 
-            System.out.print("Masukkan Tinggi Badan mu : ");
+            System.out.print("Input Tinggi Badan (m) : ");
             double height = scanner.nextDouble();
 
-            Person.printData(Person.fullName(firstName, lastName), age, weight, height);
-            System.out.println();
+            // fungsi printData
+            Person.printData(Person.fullName(firstName,lastName), age, weight, height);
         }
 
-        System.out.println("Usia tertua : " + maxAge + " tahun.");
-        System.out.println("Rata-rata usia : " + (float)sumAge / org + " tahun.");
+        System.out.println();
+        System.out.println("Kesimpulan");
+        System.out.println("Usia termuda   : " + minAge + " tahun.");
+        System.out.println("Usia tertua    : " + maxAge + " tahun.");
+        System.out.println("Rata-rata usia : " + sumAge / nOrg + " tahun.");
     }
 }

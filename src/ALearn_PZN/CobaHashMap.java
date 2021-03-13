@@ -33,5 +33,6 @@ public class CobaHashMap {
 
         // mencetak semua isi dari objek days
         System.out.println("Isi objek days: " + days);
+
     }
 }

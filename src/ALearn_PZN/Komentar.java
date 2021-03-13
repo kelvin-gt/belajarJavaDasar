@@ -12,6 +12,7 @@ public class Komentar {
 
     // Ini Coment Doc = Coment Documentation
 
+
     /**
      * Method untuk menjumlahkan value1 dan value2
      * @param value1 angka pertama

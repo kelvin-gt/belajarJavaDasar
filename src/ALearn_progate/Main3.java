@@ -1,42 +1,39 @@
 package ALearn_progate;
-
 import java.lang.Math;
-
-class Main3 {
+public class Main3 {
     public static void main(String[] args) {
-        printData(fullName("Kelvin","GT"), 20, 50.0, 1.6);
+
+        printData(fullName("Kelvin","Gilbert","T..."), 20, 1.6,50.0);
     }
 
-    public static void printData(String name, int age, double weight, double height) {
-        System.out.println("Nama ku   : " + name);
-        System.out.println("Usia ku   : " + age + " tahun.");
-        System.out.println("Berat ku  : " + weight + " kg.");
-        System.out.println("Tinggi ku : " + height + " meter.");
+    private static void printData(String name, int age, double height, double weight) {
+        System.out.println("Nama        : " + name);
+        System.out.println("Umur        : " + age);
+        System.out.println("Tinggi      : " + height);
+        System.out.println("Berat       : " + weight);
 
-        double bmi = bmi(weight, height);
-        System.out.println("BMI Asli  : " + bmi);
-        System.out.println("BMI Bulat : " + Math.round(bmi));
 
-        if (isHealth(bmi))
-        {
-            System.out.println("Anda Sehat");
+        double bmi = bmi(height, weight);
+        System.out.println("BMI         : " + bmi);
+        System.out.println("BMI (bulat) : " + Math.round(bmi));
+
+        if (isHelth(bmi)) {
+            System.out.println("Status      : Anda Sehat dengan dalam rentang standarBMI");
         }
-        else
-        {
-            System.out.println("Anda Tidak Sehat loh...");
+        else {
+            System.out.println("Status      : Anda Kurang Sehat dengan dalam rentang standar BMI");
         }
     }
 
-    public static String fullName(String firstName, String lastName) {
-        return firstName + " " + lastName;
+    private static String fullName(String firstName, String middleName, String lastName) {
+        return firstName + " " + middleName + " " + lastName;
     }
 
-    public static double bmi(double weight, double height) {
+    private static double bmi(double height, double weight) {
         return weight / height / height;
     }
 
-    public static boolean isHealth(double bmi) {
+    private static boolean isHelth(double bmi) {
         return bmi >= 18.5 && bmi < 25.0;
     }
-
 }

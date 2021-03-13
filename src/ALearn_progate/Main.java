@@ -1,198 +1,167 @@
 package ALearn_progate;
-
-
 import java.util.Arrays;
 
-class Main {
+public class Main{
     public static void main(String[] args) {
+
         System.out.println("Hello Java");
+        System.out.print("Hello Java2");
+        System.out.printf("\nHello Java3\n");
+
         System.out.println(5 + 3);
         System.out.println("5 + 3");
         System.out.println("5" + "3");
+        System.out.println(20 / 7);
+        System.out.println((float) 20 / 7);
 
         int age = 20;
         String name = "Kelvin";
-        System.out.println("Nama ku " + name + ", berumur " + age + " tahun.");
+        System.out.println("Nama ku " + name + ", umur " + age);
 
         age = 21;
         name = "Kelvin GT";
-        System.out.println("Nama ku " + name + ", berumur " + age + " tahun.");
+        System.out.printf("Nama ku %s, umur %d",name,age);
 
-        int angka1 = 15;
-        int angka2 = 7;
-        System.out.println(angka1 / angka2);
-        System.out.println((float)angka1 / angka2);
-        System.out.println((double)angka1 / angka2);
-
-        int[] numbers = {1,2,3,4,5};
+        int[] numbers = {1,2,3,4,5,6,7,8};
         String[] names = {"Kelvin","Gilbert","Tanoko"};
+        System.out.println();
         System.out.println(Arrays.toString(numbers));
         System.out.println(Arrays.toString(names));
 
         numbers[0] = 0;
         names[2] = "T";
+        System.out.println();
         System.out.println(Arrays.toString(numbers));
         System.out.println(Arrays.toString(names));
 
-        // Menambah data array
+        // Menambah array dgn copy
+        numbers = Arrays.copyOf(numbers, numbers.length + 1);
+        numbers[numbers.length - 1] = 9;
+        System.out.println(Arrays.toString(numbers));
 
-        numbers = Arrays.copyOf(numbers,numbers.length + 1);
-        numbers[numbers.length - 1] = 6;
-
-        names =  Arrays.copyOf(names, names.length + 1);
+        names = Arrays.copyOf(names, names.length + 1);
         names[names.length - 1] = "ZZ";
-
-        System.out.println(Arrays.toString(numbers));
         System.out.println(Arrays.toString(names));
 
-        for (int i = 7; i <= 10; i++) {
+        // Perulangan copyArray
+        for (int i = 10; i <= 15; i++) {
             numbers = Arrays.copyOf(numbers, numbers.length + 1);
             numbers[numbers.length - 1] = i;
-            System.out.println(Arrays.toString(numbers));
+        }
+        System.out.println(Arrays.toString(numbers));
+
+        int n = 15;
+        if (n < 17) {
+            System.out.println("Anggka lbih kecil dari 17");
+        }
+        else if (n > 17) {
+            System.out.println("Anggka lebih besar dari 17");
+        }
+        else {
+            System.out.println("Anggka == 17");
         }
 
-        int n = 17;
-
-        if (n > 17)
-        {
-            System.out.println("n lebih besar dari 17");
-        }
-        else if (n < 17)
-        {
-            System.out.println("n lebih kecil dari 17");
-        }
-        else
-        {
-            System.out.println("n == 17");
-        }
-
-        System.out.println();
-
-        switch (n % 2)
-        {
+        // Ngecek genap / ganjil
+        switch (n % 2) {
             case 0:
-                System.out.println("Genap");
+                System.out.println("Anggka ini genap");
                 break;
             case 1:
-                System.out.println("Ganjil");
+                System.out.println("Anggka ini ganjil");
                 break;
             default:
-                System.out.println("Error");
+                System.out.println("Tidak terdeteksi...");
                 break;
         }
 
-        System.out.println();
-
-        while (n <= 20)
-        {
-            System.out.println("Angka " + n);
+        // Ngulang angka dari 15 ke 20
+        while (n <= 20) {
+            System.out.println(n);
             n++;
         }
 
+        // continue
         System.out.println();
-
-        for (int m = 10; m <= 15; m++)
-        {
-            if (m == 14) continue;
-            System.out.println("Angka " + m);
+        for (int a = 15; a <= 20; a++) {
+            if (a == 18) continue;
+            System.out.println("Angka ke-" + a);
         }
 
+        // break
         System.out.println();
-
-        for (int mm = 10; mm <= 15; mm++)
-        {
-            System.out.println("Angka " + mm);
-            if (mm == 14)
-            {
-                System.out.println("Stop sampai disini");
+        for (int a = 15; a <= 20; a++) {
+            System.out.println("Angka ke-" + a);
+            if (a ==  19) {
+                System.out.println("Anggka stop sampa disini");
                 break;
             }
         }
 
+        System.out.println("\nBolean");
+        System.out.println("------------------------");
+
         boolean bool = true;
         System.out.println(bool);
-        System.out.println(4 + 2 == 7);
-        System.out.println(4 + 2 != 7);
+        System.out.println(7 + 3 == 10);
+        System.out.println(7 + 3 != 10);
 
-        for (int z = 0; z < numbers.length; z++)
-        {
-            System.out.println("Index ke " + z + ", bernilai " + numbers[z]);
+        // Jenis perulangan FOR
+        System.out.println("\nPrint isi Array dgn perulangan FOR");
+        for (int m = 0; m < numbers.length; m++) {
+            System.out.println("Print Array di Numbers[], index ke- " + m + ": " +numbers[m]);
         }
 
-
-        // Teknik cetak Learn_PZN.Array lainnya "Exchanged mode"
-        System.out.println();
-        System.out.println("Ambil dari Learn_PZN.Array Variabel Numbers[] di  atas....");
-
-        for (int number : numbers)
-        {
-            System.out.println("Number : " + number);
+        System.out.println("\nPrint isi Array dgn perulangan FOR EACH");
+        for (int number: numbers) {
+            System.out.println("Print Array di Numbers[] : " + number);
         }
 
-        for (String namex : names)
-        {
-            System.out.println("Nama ku " + namex);
+        System.out.println("\nPrint Array Names");
+        for (String namex: names) {
+            System.out.printf(namex + " ");
         }
 
         // Mencari jumlah angka pada kelompok Ganjil dan Genap
         System.out.println();
-
-        int[] angkaa = {1,2,3,4,5,6,7,8,9,10};
         int tempGanjil = 0;
         int tempGenap = 0;
 
-        for (int x = 0; x < angkaa.length; x++)
-        {
-            if (angkaa[x] % 2 == 0)
-            {
-                tempGenap += angkaa[x];
-            }
-            if (angkaa[x] % 2 != 0)
-            {
-                tempGanjil += angkaa[x];
-            }
-        }
-        System.out.println("Jumlah Angka Genap : " + tempGenap);
-        System.out.println("Jumlah Angka Ganjil : " + tempGanjil);
-
-        tempGanjil = 0;
-        tempGenap = 0;
-        for (int angka: angkaa)
-        {
-            if (angka % 2 == 1)
-            {
-                tempGanjil += angka;
+        for (int numberz : numbers) {
+            if (numberz % 2 == 1) {
+                tempGanjil += numberz;
             }
             else
             {
-                tempGenap += angka;
+                tempGenap += numberz;
             }
         }
-        System.out.println("Jumlah Angka Genap : " + tempGenap);
-        System.out.println("Jumlah Angka Ganjil : " + tempGanjil);
+        System.out.println(Arrays.toString(numbers));
+        System.out.println("Jumlah angka ganjil di Array Numbers : " + tempGanjil);
+        System.out.println("Jumlah angka genap di Array Number   : " + tempGenap);
 
-        // Mencari nilai terkecil dan terbesar
+        // Mencari anggka terkecil dan terbesar di Array Numbers
         System.out.println();
 
-        int minValue = angkaa[0];
-        int maxValue = angkaa[0];
+        int minValue = numbers[0];
+        int maxValue = numbers[0];
 
-        for (int angkax : angkaa)
-        {
-            if (minValue > angkax)
-            {
-                minValue = angkax;
+        for (int numberss: numbers) {
+            if (minValue > numberss) {
+                minValue = numberss;
             }
         }
-        System.out.println("Angka Terkecil dari array angkaa adalah : " + minValue);
+        System.out.println("Nilai Terkecil : " + minValue);
 
-        for (int j = 0; j < angkaa.length; j++)
-        {
-            if (maxValue < angkaa[j])
-            {
-                maxValue = angkaa[j];
+        for (int numberzz: numbers) {
+            if (maxValue < numberzz) {
+                maxValue = numberzz;
             }
         }
-        System.out.println("Angka Terbesar dari array angkaa adalah : " + maxValue);
+        System.out.println("Nilai terbesar : " + maxValue);
+
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.SIZE);
+        System.out.println(Integer.max(4,3));
+
     }
 }
